@@ -1,0 +1,19 @@
+<web>
+
+<css name="jquery-ui" src="/css/sss"/>
+
+<script name="jquery" src="/js/jquery-1.3.2.js"/>
+<script name="jquery-ui" src="/js/jquery-ui-1.7.2.js"/>
+
+<dependencies>
+	<dependency script="jquery-ui">
+		<required script="jquery"/>
+		<required css=""/>
+	</dependency>
+</dependencies>
+
+</web>
+
+<res:css name=""/>
+<res:script name=""/>
+

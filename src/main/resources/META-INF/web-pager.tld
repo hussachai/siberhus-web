@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+  <tlib-version>1.2</tlib-version>
+  <short-name>siberhus-simple-pager</short-name>
+  <uri>http://www.siberhus.com/web/tags/pager</uri>
+  <tag>
+    <description/>
+    <name>listPager</name>
+    <tag-class>com.siberhus.web.servlet.tags.pager.ListPager</tag-class>
+    <body-content>JSP</body-content>
+    <attribute>
+      <description>
+          Name of input bean list (Don't put real object to this attribute)
+      </description>
+      <name>items</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+          Name of output bean list (Don't put real object to this attribute)
+      </description>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            Index of list to fetch from specified list
+            retrieve this value from request param.
+            name of this param must match the paramName (If it's specified)
+            or must be "pageOffset" (If it's not specified)
+            Example
+            offset="${param.pageOffset}" (default)
+            offset="${param.page}" paramName="page"
+        </description>
+      <name>offset</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            Number of bean to fetch from list for each loop
+        </description>
+      <name>limit</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            
+            (Optional) (default-value "pageNav")
+            this value will be use to name request attribute that
+            keep html code to generate page you can put it anywhere
+            to display page navigation
+            Example
+                ${pageNav}
+            Warning
+                - Don't put it in tag body
+        </description>
+      <name>pageNavVar</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+          (Option)
+            Style :
+            1. dropdown,combobox
+            2. href-list
+            3. href-list-wrap
+        </description>
+      <name>pageNavStyle</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value requestURI)
+            if you don't specify this value it'll be request URI.
+            It will be useful if you want to request to another page.
+        </description>
+      <name>uri</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value "pageOffset")
+            see offset attribute
+        </description>
+      <name>paramOffsetName</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value "")
+            anchorVar
+        </description>
+      <name>anchorVar</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value "")
+            pageNumVar
+        </description>
+      <name>pageNumVar</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+  <!-- basicPager -->
+  <tag>
+    <description/>
+    <name>basicPager</name>
+    <tag-class>com.siberhus.web.servlet.tags.pager.BasicPager</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>
+      </description>
+      <name>rownum</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            Index of list to fetch from specified list
+            retrieve this value from request param.
+            name of this param must match the paramName (If it's specified)
+            or must be "pageOffset" (If it's not specified)
+            Example
+            offset="${param.pageOffset}" (default)
+            offset="${param.page}" paramName="page"
+        </description>
+      <name>offset</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            Number of bean to fetch from list for each loop
+        </description>
+      <name>limit</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            
+            (Optional) (default-value "pageNav")
+            this value will be use to name request attribute that
+            keep html code to generate page you can put it anywhere
+            to display page navigation
+            Example
+                ${pageNav}
+            Warning
+                - Don't put it in tag body
+        </description>
+      <name>pageNavVar</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+          (Option)
+            Style :
+            1. dropdown,combobox
+            2. href-list
+            3. href-list-wrap
+        </description>
+      <name>pageNavStyle</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value requestURI)
+            if you don't specify this value it'll be request URI.
+            It will be useful if you want to request to another page.
+        </description>
+      <name>uri</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value "pageOffset")
+            see offset attribute
+        </description>
+      <name>paramOffsetName</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value "")
+            anchorVar
+        </description>
+      <name>anchorVar</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>
+            (Optional) (default-value "")
+            pageNumVar
+        </description>
+      <name>pageNumVar</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>
